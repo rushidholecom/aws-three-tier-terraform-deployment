@@ -8,7 +8,7 @@ resource "aws_vpc" "project_vpc" {
 
 resource "aws_subnet" "public_subnet" {
   tags = {
-    name = "${var.project}-public-subnet"
+    Name = "${var.project}-public-subnet"
   }
   cidr_block = var.public_subnet_cidr
   vpc_id = "${aws_vpc.project_vpc.id}"
@@ -18,7 +18,7 @@ resource "aws_subnet" "public_subnet" {
 
 resource "aws_subnet" "private_subnet" {
   tags = {
-    name = "${var.project}-private-subnet"
+    Name = "${var.project}-private-subnet"
   }
   cidr_block = var.private_subnet_cidr
   vpc_id = "${aws_vpc.project_vpc.id}"
