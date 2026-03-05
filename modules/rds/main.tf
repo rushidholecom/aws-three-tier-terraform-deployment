@@ -18,7 +18,7 @@ resource "aws_security_group" "mariadb_security_group" {
   }
 }
 
-resource "aws_db_instance" "mariadb" {
+resource "aws_db_instance" "mariadb-ins" {
   identifier = var.db_instance_identifier
   engine = "mariadb"
   engine_version = "11.8.5"
