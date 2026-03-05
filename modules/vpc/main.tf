@@ -1,7 +1,8 @@
 resource "aws_vpc" "project_vpc" {
   tags = {
-    name = "project-vpc"
+    name = "project_vpc"
   }
-  cidr_block = "171.10.0.0/20"
+  cidr_block = var.cidr
   instance_tenancy = "default"
+  
 }
