@@ -5,11 +5,11 @@ variable "project" {
 variable "cidr" {}
 
 variable "public_subnet_cidr" {
-  default = "171.10.1.0/22"
+  default = "171.10.2.0/22"
 }
 
 variable "private_subnet_cidr" {
-  default = "171.10.2.0/22"
+  default = "171.10.4.0/22"
 }
 
 variable "public_avaibilityzone" {
