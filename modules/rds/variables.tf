@@ -5,7 +5,7 @@ variable "db_instance_identifier" {
 variable "vpc_id" {}
 
 variable "db_name" {
-  default = "project-db"
+  default = "projectdb"
 }
 
 variable "db_username" {
