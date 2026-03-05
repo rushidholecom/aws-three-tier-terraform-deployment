@@ -29,6 +29,11 @@ resource "aws_db_instance" "mariadb" {
   password = var.db_password
   vpc_security_group_ids = [aws_security_group.mariadb_security_group.id]
   publicly_accessible = true
+  timeouts {
+    create = "3h"
+    delete = "3h"
+    update = "3h"
+  }
 }
 
 
