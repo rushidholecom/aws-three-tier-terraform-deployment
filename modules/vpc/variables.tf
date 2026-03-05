@@ -19,3 +19,15 @@ variable "public_avaibilityzone" {
 variable "private_avaibilityzone" {
   default = "ap-southeast-1b"
 }
+output "vpc_id" {
+  value = aws_vpc.project_vpc.id
+  sensitive = true
+}
+
+output "public_subnet_id" {
+  value = aws_subnet.public_subnet.id
+}
+
+output "private_subnet_id" {
+  value = aws_subnet.private_subnet
+}

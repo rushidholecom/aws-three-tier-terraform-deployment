@@ -1,6 +1,6 @@
 resource "aws_vpc" "project_vpc" {
   tags = {
-    name = "project-vpc"
+    Name = "project-vpc"
   }
   cidr_block = var.cidr
   instance_tenancy = "default"
