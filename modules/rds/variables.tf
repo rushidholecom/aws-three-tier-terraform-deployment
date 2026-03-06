@@ -15,3 +15,5 @@ variable "db_username" {
 variable "db_password" {
   default = "redhat123"
 }
+
+variable "private_subnet" {}

@@ -23,6 +23,7 @@ resource "aws_db_instance" "mariadb-ins" {
   engine = "mariadb"
   engine_version = "11.8.5"
   instance_class = "db.t3.micro"
+  db_subnet_group_name = var.private_subnet
   allocated_storage = 10
   db_name = var.db_name
   username = var.db_username

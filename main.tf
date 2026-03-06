@@ -10,4 +10,6 @@ module "project" {
 module "rds" {
   source = "./modules/rds"
   vpc_id = module.project.vpc_id
+  private_subnet = module.project.private_subnet_id
 }
+
