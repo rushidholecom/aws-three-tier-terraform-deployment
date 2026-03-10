@@ -14,6 +14,7 @@ resource "aws_subnet" "public_subnet" {
   vpc_id = "${aws_vpc.project_vpc.id}"
   map_public_ip_on_launch = true
   availability_zone = var.public_avaibilityzone
+  depends_on = [ aws_vpc.project_vpc ]
 }
 
 resource "aws_subnet" "private_subnet" {
@@ -24,4 +25,5 @@ resource "aws_subnet" "private_subnet" {
   vpc_id = "${aws_vpc.project_vpc.id}"
   map_public_ip_on_launch = false
   availability_zone = var.private_avaibilityzone
+  depends_on = [ aws_vpc.project_vpc ]
 }
