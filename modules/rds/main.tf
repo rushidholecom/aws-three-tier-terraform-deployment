@@ -18,18 +18,27 @@ resource "aws_security_group" "mariadb_security_group" {
   }
 }
 
+resource "aws_db_subnet_group" "db_subnet_group" {
+  name = "db-subnet-group"
+  subnet_ids = var.private_subnet.id
+  tags = {
+    Name = "db-subnet-group"
+  }
+}
+
 resource "aws_db_instance" "mariadb-ins" {
   identifier = var.db_instance_identifier
   engine = "mariadb"
   engine_version = "11.8.5"
   instance_class = "db.t3.micro"
-  db_subnet_group_name = var.private_subnet
+  db_subnet_group_name = aws_db_subnet_group.db_subnet_group.name
   allocated_storage = 10
   db_name = var.db_name
   username = var.db_username
   password = var.db_password
-  vpc_security_group_ids = [aws_security_group.mariadb_security_group.id]
+    vpc_security_group_ids = [aws_security_group.mariadb_security_group.id]
   publicly_accessible = true
+  
   timeouts {
     create = "3h"
     delete = "3h"
